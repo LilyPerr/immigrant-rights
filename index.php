@@ -14,6 +14,9 @@
     if(!$results) {
         echo $mysqli->error;
     }
+    else {
+        echo "HELLO NO ERROR";
+    }
 ?>
 
 <!doctype html>
