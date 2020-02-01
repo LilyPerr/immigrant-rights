@@ -159,39 +159,11 @@
                 <td>Canada</td>
                 <td>[sdlkjf]</td>
                 <td>No</td>
-                <td>[]</td>
                 <td>02/01/2020</td>
                 <td>Mother</td>
                 <td>Traffic Stop</td>
                 <td>No</td>
                 <td>here are some more details that i'm writing to test how the table looks when there's a lot of text</td>
-              </tr>
-              <tr>
-                <th scope="row"><a href="details.php?id=">Lily Perry</a></th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row">Lily Perry</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-                <td></td>
-                <td></td>
               </tr>
               
             </tbody>
