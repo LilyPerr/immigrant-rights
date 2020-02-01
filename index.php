@@ -59,7 +59,7 @@
             <thead>
               <tr>
                 <th class="top-header" scope="col" colspan="4">Biographical Info</th>
-                <th class="top-header" scope="col" colspan="2">Preliminary Qs</th>
+                <th class="top-header" scope="col">Preliminary Qs</th>
                 <th class="top-header" scope="col">Last Entry</th>
                 <th class="top-header" scope="col">Community Ties</th>
                 <th class="top-header" scope="col">Detention History</th>
@@ -152,7 +152,7 @@
                     <!-- <td></td> -->
                 <?php endwhile; ?>
 
-                
+
               <tr>
                 <th scope="row"><a href="details.php?id=">Teagan Ampe</a></th>
                 <td>201-942-292</td>
