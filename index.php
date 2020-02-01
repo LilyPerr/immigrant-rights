@@ -10,7 +10,7 @@
 
     $sql = "SELECT * FROM immigrants;";
 
-    $result = $mysqli->query($sql);
+    $results = $mysqli->query($sql);
     if(!$results) {
         echo $mysqli->error;
     }
