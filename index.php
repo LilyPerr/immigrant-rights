@@ -7,6 +7,13 @@
         echo $mysqli->connect_error;
         exit();
     }
+
+    $sql = "SELECT * FROM immigrants;";
+
+    $result = $mysqli->query($sql);
+    if(!$results) {
+        echo $mysqli->error;
+    }
 ?>
 
 <!doctype html>
