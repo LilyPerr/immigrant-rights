@@ -1,3 +1,15 @@
+<?php 
+    require 'config.php';
+
+    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+    if($mysqli->connect_errno) {
+        echo $mysqli->connect_error;
+        exit();
+    }
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -69,7 +81,7 @@
             </div>
             <div id="detention-history">
                 <h4 class="header">Detention History</h4 class="header">
-                <div class="category">Detention History</div>
+                <div class="category">How Detained?</div>
                 <div id="how-detained">Traffic Stop</div>
             </div>
             <div id="potential-bars">

@@ -14,9 +14,11 @@
     if(!$results) {
         echo $mysqli->error;
     }
-    else {
-        echo "HELLO NO ERROR";
-    }
+    // else {
+    //     echo "HELLO NO ERROR";
+    // }
+
+
 ?>
 
 <!doctype html>
@@ -73,7 +75,6 @@
 
                 <!-- preliminary qs -->
                 <th class="subheading" scope="col">Previous Attorney?</th>
-                <th class="subheading">Test</th>
                 
                 <!-- last entry -->
                 <th class="subheading" scope="col">Last US Entry</th>
@@ -93,10 +94,69 @@
               </tr>
             </thead>
             <tbody>
+                <!-- populate each table row from database -->
+                <?php while ( $row = $results->fetch_assoc() ) : ?>
+                    <!-- biographical info -->
+
+                    <!-- name -->
+                    <th scope="row">
+                        <a href="details.php?id=<?php echo $row['id']; ?>">
+                            <?php echo $row['name']; ?>
+                        </a>
+                    </th>
+
+                    <!-- A# -->
+                    <td>
+                        <?php echo $row['anum']; ?>
+                    </td>
+
+                    <!-- country of origin -->
+                    <td>
+                        <?php echo $row['country']; ?>
+                    </td>
+
+                    <!-- detention center -->
+                    <td>
+                        <?php echo $row['center']; ?>
+                    </td>
+
+                    <!-- previous attorney? -->
+                    <td>
+                        <?php echo $row['attorney']; ?> 
+                    </td>
+
+                    <!-- last U.S. entry -->
+                    <td>
+                        <?php echo $row['lastentry']; ?>
+                    </td>
+
+                    <!-- U.S. family -->
+                    <td>
+                        <?php echo $row['family']; ?>
+                    </td>
+
+                    <!-- how detained? -->
+                    <td>
+                        <?php echo $row['howdetained']; ?>
+                    </td>
+
+                    <!-- previously deported? -->
+                    <td>
+                        <?php echo $row['deported']; ?>
+                    </td>
+
+                    <!-- anything else? -->
+                    <td>
+                        <?php echo $row['otherdetails']; ?>
+                    </td>
+                    <!-- <td></td> -->
+                <?php endwhile; ?>
+
+                
               <tr>
                 <th scope="row"><a href="details.php?id=">Teagan Ampe</a></th>
-                <td>Canada</td>
                 <td>201-942-292</td>
+                <td>Canada</td>
                 <td>[sdlkjf]</td>
                 <td>No</td>
                 <td>[]</td>
