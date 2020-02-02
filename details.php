@@ -8,6 +8,30 @@
         exit();
     }
 
+    //if id correctly set, populate from database
+    if(isset($_GET['id']) && !empty($_GET['id'])) {
+
+        $sql = "SELECT * FROM immigrants 
+            WHERE id = " . $_GET['id'] . ";";
+
+        $results = $mysqli->query($sql);
+        if(!$results) {
+            echo $mysqli->error;
+        }
+        
+        // $statement = $mysqli->prepare($sql);
+        // $statement->bind_param("i", $id);
+        // $statement->execute();
+
+        //should only be one row of results for one id
+        $row = $results->fetch_assoc();
+
+    }
+    //otherwise redirect back to main page
+    else {
+        header('Location: index.php');
+    }
+
 ?>
 
 <!doctype html>
@@ -53,46 +77,67 @@
   <body>
     <div class="container">
         <div id="inner-container">
+
             <div id="biographical-info">
                 <h4 class="header">Biographical Information</h4 class="header">
                 <div class="category">Name</div>
-                <div id="name">Teagan Ampe</div>
+                <div id="name">
+                    <?php echo $row['name']; ?>
+                </div>
                 <div class="category">A#</div>
-                <div id="a-num">201-942-292</div>
+                <div id="a-num">
+                    <?php echo $row['anum']; ?>
+                </div>
                 <div class="category">Country of Origin</div>
-                <div id="origin-country">Canada</div>
+                <div id="origin-country">
+                    <?php echo $row['country']; ?>
+                </div>
                 <div class="category">Detention Center</div>
-                <div id="detention-center">[sldfj]</div>
+                <div id="detention-center">
+                    <?php echo $row['center']; ?>
+                </div>
             </div>
             <div id="preliminary-qs">
                 <h4 class="header">Preliminary Questions</h4 class="header">
                 <div class="category">Previous Attorney?</div>
-                <div id="previous-attorney">No</div>
+                <div id="previous-attorney">
+                    <?php echo $row['attorney']; ?> 
+                </div>
             </div>
             <div id="last-entry">
                 <h4 class="header">Last Entry</h4 class="header">
                 <div class="category">Last U.S. Entry</div>
-                <div id="last-us-entry">02/01/2020</div>
+                <div id="last-us-entry">
+                    <?php echo $row['lastentry']; ?>
+                </div>
             </div>
             <div id="community-ties">
                 <h4 class="header">Community Ties</h4 class="header">
                 <div class="category">U.S. Family</div>
-                <div id="us-family">Mother</div>
+                <div id="us-family">
+                    <?php echo $row['family']; ?>
+                </div>
             </div>
             <div id="detention-history">
                 <h4 class="header">Detention History</h4 class="header">
                 <div class="category">How Detained?</div>
-                <div id="how-detained">Traffic Stop</div>
+                <div id="how-detained">
+                    <?php echo $row['howdetained']; ?>
+                </div>
             </div>
             <div id="potential-bars">
                 <h4 class="header">Potential Bars</h4 class="header">
                 <div class="category">Previously Deported?</div>
-                <div id="previously-deported">No</div>
+                <div id="previously-deported">
+                    <?php echo $row['deported']; ?>
+                </div>
             </div>
             <div id="other-details">
                 <h4 class="header">Other Details</h4 class="header">
                 <div class="category">Anything Else?</div>
-                <div id="anything-else">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <div id="anything-else">
+                    <?php echo $row['otherdetails']; ?>
+                </div>
             </div>
         </div>
         
