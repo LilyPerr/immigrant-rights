@@ -154,7 +154,7 @@
                 <?php endwhile; ?>
 
 
-              <tr>
+              <!-- <tr>
                 <th scope="row"><a href="details.php?id=">Teagan Ampe</a></th>
                 <td>201-942-292</td>
                 <td>Canada</td>
@@ -165,7 +165,7 @@
                 <td>Traffic Stop</td>
                 <td>No</td>
                 <td>here are some more details that i'm writing to test how the table looks when there's a lot of text</td>
-              </tr>
+              </tr> -->
               
             </tbody>
         </table>
