@@ -97,59 +97,60 @@
                 <!-- populate each table row from database -->
                 <?php while ( $row = $results->fetch_assoc() ) : ?>
                     <!-- biographical info -->
+                    <tr>
+                        <!-- name -->
+                        <th scope="row">
+                            <a href="details.php?id=<?php echo $row['id']; ?>">
+                                <?php echo $row['name']; ?>
+                            </a>
+                        </th>
 
-                    <!-- name -->
-                    <th scope="row">
-                        <a href="details.php?id=<?php echo $row['id']; ?>">
-                            <?php echo $row['name']; ?>
-                        </a>
-                    </th>
+                        <!-- A# -->
+                        <td>
+                            <?php echo $row['anum']; ?>
+                        </td>
 
-                    <!-- A# -->
-                    <td>
-                        <?php echo $row['anum']; ?>
-                    </td>
+                        <!-- country of origin -->
+                        <td>
+                            <?php echo $row['country']; ?>
+                        </td>
 
-                    <!-- country of origin -->
-                    <td>
-                        <?php echo $row['country']; ?>
-                    </td>
+                        <!-- detention center -->
+                        <td>
+                            <?php echo $row['center']; ?>
+                        </td>
 
-                    <!-- detention center -->
-                    <td>
-                        <?php echo $row['center']; ?>
-                    </td>
+                        <!-- previous attorney? -->
+                        <td>
+                            <?php echo $row['attorney']; ?> 
+                        </td>
 
-                    <!-- previous attorney? -->
-                    <td>
-                        <?php echo $row['attorney']; ?> 
-                    </td>
+                        <!-- last U.S. entry -->
+                        <td>
+                            <?php echo $row['lastentry']; ?>
+                        </td>
 
-                    <!-- last U.S. entry -->
-                    <td>
-                        <?php echo $row['lastentry']; ?>
-                    </td>
+                        <!-- U.S. family -->
+                        <td>
+                            <?php echo $row['family']; ?>
+                        </td>
 
-                    <!-- U.S. family -->
-                    <td>
-                        <?php echo $row['family']; ?>
-                    </td>
+                        <!-- how detained? -->
+                        <td>
+                            <?php echo $row['howdetained']; ?>
+                        </td>
 
-                    <!-- how detained? -->
-                    <td>
-                        <?php echo $row['howdetained']; ?>
-                    </td>
+                        <!-- previously deported? -->
+                        <td>
+                            <?php echo $row['deported']; ?>
+                        </td>
 
-                    <!-- previously deported? -->
-                    <td>
-                        <?php echo $row['deported']; ?>
-                    </td>
-
-                    <!-- anything else? -->
-                    <td>
-                        <?php echo $row['otherdetails']; ?>
-                    </td>
-                    <!-- <td></td> -->
+                        <!-- anything else? -->
+                        <td>
+                            <?php echo $row['otherdetails']; ?>
+                        </td>
+                        <!-- <td></td> -->
+                    </tr>
                 <?php endwhile; ?>
 
 
